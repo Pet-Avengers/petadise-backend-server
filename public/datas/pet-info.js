@@ -72,7 +72,7 @@ const petInfo =
             { 
               "tips": "[petName] wants to have breakfast at [startTime], which food do you want to feed?",
               "startTime": "08:00:00",
-              "endTime": "08:30:00",
+              "endTime": "10:00:00",
               "happinessBonus":
                 [
                   defaultHappinessBonus.favorate2,
@@ -84,7 +84,7 @@ const petInfo =
             { 
               "tips": "It's time for dinner, pick an ideal food for [petName]",
               "startTime": "18:00:00",
-              "endTime": "18:30:00",
+              "endTime": "19:00:00",
               "happinessBonus":
                 [
                   {"value": 2, "reason": "[petName] likes it. But he can't eat too much of this"},
@@ -218,7 +218,7 @@ const petInfo =
             {
               "tips": "[petName] wants to have breakfast at [startTime], which food do you want to feed?",
               "startTime": "08:00:00",
-              "endTime": "08:30:00",
+              "endTime": "10:00:00",
               "happinessBonus":
                 [
                   defaultHappinessBonus.cannedFoodForYoung,

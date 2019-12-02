@@ -10,7 +10,7 @@ router.post('/unique-id', function(req, res, next) {
   const username = randomstring.generate();
   const newUserFlag = isNewUser(username);
   const uniqueId = getUniqueId(username);
-  console.log("isnewuser", newUserFlag)
+  // console.log("isnewuser", newUserFlag)
   res.status(200).send(JSON.stringify({isNewUser: newUserFlag, uniqueId: uniqueId}));
 });
 

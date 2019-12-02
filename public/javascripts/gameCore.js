@@ -2,7 +2,7 @@ var randomstring = require('randomstring');
 var petInfo = require('../datas/pet-info').petInfo;
 
 /* global const */
-const speedUpRate = 1000.0;
+const speedUpRate = 360.0;
 const oneDaySecond = 60 * 60 * 24;
 const happinessBonusValueScale = 10.0;
 const interactionThreshold = 5;
@@ -132,7 +132,12 @@ function processResponseWithTaskUniqueId(uniqueId, petName, taskUniqueId, choose
     happinessBonus.reason += "(You earn " + happinessBonus.value + "/" + happinessBonus.value + " bonus because of response in time)";
   }
   if (timeoutFlag) {
-    const penalValue = happinessBonus.value * 0.5;
+    var penalValue;
+    if (happinessBonus.value >= 0) {
+      penalValue = happinessBonus.value * 0.5;
+    } else {
+      penalValue = happinessBonus.value;
+    }
     happinessBonus.reason += "(You only earn " + penalValue + "/" + happinessBonus.value + " bonus because of response too late)";
     happinessBonus.value = penalValue;
   }
