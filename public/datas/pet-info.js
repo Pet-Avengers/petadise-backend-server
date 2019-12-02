@@ -9,8 +9,8 @@ const defaultHappinessBonus = {
   "boneForOldDog": {"value": -2, "reason": "Protein may exist in the bone. But [petName]'s teeth is inappropriate to bite this"},
   "boneForPuppy": {"value": 2, "reason": "Biting bones helps puppy to clean teeth, but remember that chicken bone is dangerous to their stomach"},
   "boneForCat": {"value": -5, "reason": "Bones are dangerous for cat. Stop doing that!"},
-  "fishForYoungerCat": {"value": -2, "reason": "Remember that fish bones might can be dangerous for [petName]"},
-  "fishForOldCat": {"value": -2, "reason": "[petName] loves fish very much"},
+  "fishForYoungerCat": {"value": -2, "reason": "Remember that fish bones can be dangerous for [petName]"},
+  "fishForOldCat": {"value": 5, "reason": "[petName] loves fish very much"},
   "fishForDogs": {"value": -2, "reason": "Remember that cooked bones of any kind can be dangerous for [petName]"},
   "frisbee": {"value": 5, "reason": "[petName] likes to play frisbee! You have a great time with your lovely baby"},
   "ball": {"value": 5, "reason": "[petName] feels exciting! Catch the ball, catch happier life!"},
@@ -70,8 +70,8 @@ const petInfo =
         "demand":
           [
             { 
-              "tips": "[petName] wants to have breakfast at [startTime], which food do you want to feed?",
-              "startTime": "08:00:00",
+              "tips": "[petName] wants to have breakfast, which food do you want to feed?",
+              "startTime": "02:00:00",
               "endTime": "10:00:00",
               "happinessBonus":
                 [
@@ -82,7 +82,7 @@ const petInfo =
                 ]
             },
             { 
-              "tips": "It's time for dinner, pick an ideal food for [petName]",
+              "tips": "[startTime] It's time for dinner, pick an ideal food for [petName]",
               "startTime": "18:00:00",
               "endTime": "19:00:00",
               "happinessBonus":
@@ -114,7 +114,7 @@ const petInfo =
         "demand":
           [
             {
-              "tips": "[petName] wants to play with you now, pick up a toy to play with your cuty",
+              "tips": "[petName] wants to play with you now([startTime]), pick up a toy to play with your cuty",
               "startTime": "15:00:00",
               "endTime": "18:00:00",
               "happinessBonus":
@@ -126,7 +126,7 @@ const petInfo =
                 ]
             },
             {
-              "tips": "[petName] wants to play with you now, pick up a toy to play with your cuty",
+              "tips": "[petName] wants to play with you now([startTime]), pick up a toy to play with your cuty",
               "startTime": "18:00:00",
               "endTime": "21:00:00",
               "happinessBonus":
@@ -217,7 +217,7 @@ const petInfo =
           [
             {
               "tips": "[petName] wants to have breakfast at [startTime], which food do you want to feed?",
-              "startTime": "08:00:00",
+              "startTime": "06:00:00",
               "endTime": "10:00:00",
               "happinessBonus":
                 [
@@ -252,7 +252,7 @@ const petInfo =
                 ]
             },
             {
-              "tips": "It's time for [petName] to have dinner, which food do you want to feed?",
+              "tips": "[startTime] It's time for [petName] to have dinner, which food do you want to feed?",
               "startTime": "18:00:00",
               "endTime": "19:00:00",
               "happinessBonus":
@@ -284,8 +284,8 @@ const petInfo =
       "demand":
         [
           {
-            "tips": "It's time to play! Pick up a toy to play with [petName]",
-            "startTime": "8:00:00",
+            "tips": "[startTime] - [endTime] It's time to play! Pick up a toy to play with [petName]",
+            "startTime": "08:00:00",
             "endTime": "12:00:00",
             "happinessBonus":
               [
@@ -296,7 +296,7 @@ const petInfo =
               ]
           },
           {
-            "tips": "It's time to play! Pick up a toy to play with [petName]",
+            "tips": "[startTime] - [endTime] It's time to play! Pick up a toy to play with [petName]",
             "startTime": "12:00:00",
             "endTime": "15:00:00",
             "happinessBonus":
@@ -308,7 +308,7 @@ const petInfo =
               ]
           },
           {
-            "tips": "It's time to play! Pick up a toy to play with [petName]",
+            "tips": "[startTime] - [endTime] It's time to play! Pick up a toy to play with [petName]",
             "startTime": "15:00:00",
             "endTime": "18:00:00",
             "happinessBonus":
@@ -320,7 +320,7 @@ const petInfo =
               ]
           },
           {
-            "tips": "It's time to play! Pick up a toy to play with [petName]",
+            "tips": "[startTime] - [endTime] It's time to play! Pick up a toy to play with [petName]",
             "startTime": "18:00:00",
             "endTime": "21:00:00",
             "happinessBonus":
@@ -376,7 +376,7 @@ const petInfo =
                 ]
             },
             {
-              "tips": "[petName] may need have a walk three times a day, where do you want to go?",
+              "tips": "It's [startTime]. [petName] may need have a walk three times a day, where do you want to go?",
               "startTime": "19:00:00",
               "endTime": "20:00:00",
               "happinessBonus":
@@ -478,7 +478,7 @@ const petInfo =
           "demand":
             [
               {
-                "tips": "[petName] wants to play with you, pick up a toy to play with [petName]",
+                "tips": "[petName] wants to play with you at [startTime], pick up a toy to play with [petName]",
                 "startTime": "18:00:00",
                 "endTime": "23:00:00",
                 "happinessBonus":
@@ -556,7 +556,7 @@ const petInfo =
           "demand":
             [
               {
-                "tips": "[petName] wants to have breakfast at [startTime], which food do you want to feed [petName]?",
+                "tips": "[petName] wants to have breakfast at [startTime], which food do you want to feed?",
                 "startTime": "07:00:00",
                 "endTime": "08:00:00",
                 "happinessBonus":
@@ -568,7 +568,7 @@ const petInfo =
                   ]
               },
               {
-                "tips": "[petName] wants to have snacks at [startTime], which food do you want to feed [petName]?",
+                "tips": "[petName] wants to have snacks at [startTime], which food do you want to feed?",
                 "startTime": "12:00:00",
                 "endTime": "13:00:00",
                 "happinessBonus":
@@ -592,7 +592,7 @@ const petInfo =
                   ]
               },
               {
-                "tips": "It's time for dinner! which food do you want to feed [petName]?",
+                "tips": "[startTime] - [endTime] It's time for dinner! which food do you want to feed [petName]?",
                 "startTime": "18:00:00",
                 "endTime": "19:00:00",
                 "happinessBonus":
@@ -626,7 +626,7 @@ const petInfo =
           "demand":
             [
               {
-                "tips": "[petName] wants to play with you, which one would you choose?",
+                "tips": "[petName] wants to play with you between [startTime] - [endTime], which one would you choose?",
                 "startTime": "18:00:00",
                 "endTime": "23:00:00",
                 "happinessBonus":
