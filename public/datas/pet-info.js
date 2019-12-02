@@ -548,7 +548,7 @@ const petInfo =
         "age": petTags.age.choices.young
       },
       //description
-      "description": "Mikky is a five months old kitty. She's a gorgeous little kitten who loves to play, pounce, purr and cuddle. She loves toys! Even if it's not a toy, She'll find a way to play with it." +
+      "description": "Max is a five months old kitty. She's a gorgeous little kitten who loves to play, pounce, purr and cuddle. She loves toys! Even if it's not a toy, She'll find a way to play with it." +
       "You have to spend so much time teaching and feeding them, it will be a huge mission.",
       // type
       "feed":
