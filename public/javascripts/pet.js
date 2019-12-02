@@ -32,7 +32,7 @@ function getPetCandidates(questionnaire) {
       petNamesAndInfo.push({petName: petName, intro: petInfo[petName]["description"]})
     }
   }
-  console.log(petNamesAndInfo);
+  // console.log(petNamesAndInfo);
   return petNamesAndInfo;
 }
 
