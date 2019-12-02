@@ -3,6 +3,7 @@ var router = express.Router();
 const generateQuestionnaire = require('../public/javascripts/pet').generateQuestionnaire;
 const getPetCandidates = require('../public/javascripts/pet').getPetCandidates;
 const getPetDescription = require('../public/javascripts/pet').getPetDescription;
+const getAllPets = require('../public/javascripts/pet').getAllPets;
 
 router.get('/questionnaire-questions', function(req, res, next) {
   const questionnaire = generateQuestionnaire();
@@ -19,6 +20,11 @@ router.post('/description', function(req, res, next) {
   const petName = req.body.petName;
   const description = getPetDescription(petName);
   res.status(200).send(JSON.stringify({description: description}));
+});
+
+router.get('/all-pets', function(req, res, next) {
+  const allPets = getAllPets();
+  res.status(200).send(JSON.stringify({allPets: allPets}));
 });
 
 module.exports = router;
