@@ -44,6 +44,15 @@ function getPetDescription(petName) {
   }
 }
 
+function getAllPets() {
+  var petNamesAndInfo = [];
+  for (var petName in petInfo) {
+    petNamesAndInfo.push({petName: petName, intro: petInfo[petName]["description"]})
+  }
+  return petNamesAndInfo;
+}
+
 exports.generateQuestionnaire = generateQuestionnaire;
 exports.getPetCandidates = getPetCandidates;
 exports.getPetDescription = getPetDescription;
+exports.getAllPets = getAllPets;
