@@ -245,7 +245,7 @@ function prepareTasks(socket, uniqueId, petName) {
           const maxHappinessValue = getMaxHappinessBonusValue(happinessBonus);
           calculateFullScore(uniqueId, petName, maxHappinessValue);
           socket.emit('taskAlert', {petName: petName, type: type, uniqueTaskId: uniqueTaskId});
-          console.log("interval task sent!")
+          // console.log("interval task sent!")
         }, oneDaySecond / speedUpRate * 1000);
       }, startTimeout);
     }
