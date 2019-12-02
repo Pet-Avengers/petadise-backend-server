@@ -208,7 +208,7 @@ const petInfo =
         "age": petTags.age.choices.young
       },
     //description
-    "description": "Frankie is a 5 month old puppy. He loves biting everything. He has a lot of energy, you have to spend more time teaching and playing with Frankie. "+
+    "description": "Cooper is a 5 month old puppy. He loves biting everything. He has a lot of energy, you have to spend more time teaching and playing with Frankie. "+
     "And he needs to eat three times to four times a day. Remember to prepare good food for him so that he can grow stronger.",
     // type
     "feed":
@@ -515,7 +515,7 @@ const petInfo =
                 "endTime": "22:00:00",
                 "happinessBonus":
                   [
-                    defaultHappinessBonus.favorate,
+                    defaultHappinessBonus.favorate1,
                     defaultHappinessBonus.HospitalForOld,
                     defaultHappinessBonus.ParkForCat,
                     defaultHappinessBonus.Cafe
