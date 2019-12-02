@@ -36,15 +36,15 @@ function generateUniqueTaskId() {
   return randomstring.generate()
 }
 
-function processTemplate(template, petName, startTime) {
-  return template.replace('[petName]', petName).replace('[startTime]', startTime);
+function processTemplate(template, petName, startTime, endTime) {
+  return template.replace('[petName]', petName).replace('[startTime]', startTime).replace('[endTime]', endTime);
 }
 
 function getTips(petName, type, taskUniqueId) {
   if (taskUniqueId in waitForResponseTasks) {
     return waitForResponseTasks[taskUniqueId].tips;
   } else {
-      return processTemplate(petInfo[petName][type]["nondemand"].tips, petName, '');
+      return processTemplate(petInfo[petName][type]["nondemand"].tips, petName, '', '');
   }
 }
 
@@ -127,7 +127,7 @@ function processResponseWithTaskUniqueId(uniqueId, petName, taskUniqueId, choose
     timeoutFlag = false;
   }
   calculateMatchScoreActively(true, timeoutFlag, happinessBonus.value, uniqueId, petName);
-  happinessBonus.reason = processTemplate(happinessBonus.reason, petName, '');
+  happinessBonus.reason = processTemplate(happinessBonus.reason, petName, '', '');
   if (!timeoutFlag) {
     happinessBonus.reason += "(You earn " + happinessBonus.value + "/" + happinessBonus.value + " bonus because of response in time)";
   }
@@ -154,7 +154,7 @@ function processResponseWithoutTaskUniqueId(uniqueId, petName, type, chooseItemI
   calculateMatchScoreActively(false, false, happinessBonus.value, uniqueId, petName);
   // const maxHappinessValue = getMaxHappinessBonusValue(happinessBonus);
   // calculateFullScore(uniqueId, petName, happinessBonusValue)
-  happinessBonus.reason = processTemplate(happinessBonus.reason, petName, '');
+  happinessBonus.reason = processTemplate(happinessBonus.reason, petName, '', '');
   happinessBonus.reason += "(You earn " + happinessBonus.value + " bonus)";
   console.log("not-in-need", matchScore);
   return happinessBonus;
@@ -217,6 +217,7 @@ function prepareTasks(socket, uniqueId, petName) {
     const demands = petInfo[petName][type]["demand"];
     for (var j = 0; j < demands.length; j++) {
       const startTime = demands[j].startTime;
+      const endTime = demands[j].endTime;
       const startTimeout = timeToMilliSecond(demands[j].startTime);
       const endTimeout = timeToMilliSecond(demands[j].endTime);
       const tips = demands[j].tips;
@@ -226,7 +227,7 @@ function prepareTasks(socket, uniqueId, petName) {
         waitForResponseTasks[uniqueTaskId] = {
           uniqueId: uniqueId,
           petName: petName,
-          tips: processTemplate(tips, petName, startTime),
+          tips: processTemplate(tips, petName, startTime, endTime),
           startTimeout: startTimeout,
           endTimeout: endTimeout,
           createTime: new Date().getTime(),
@@ -241,7 +242,7 @@ function prepareTasks(socket, uniqueId, petName) {
           waitForResponseTasks[uniqueTaskId] = {
             uniqueId: uniqueId,
             petName: petName,
-            tips: processTemplate(tips, petName, startTime),
+            tips: processTemplate(tips, petName, startTime, endTime),
             startTimeout: startTimeout,
             endTimeout: endTimeout,
             createTime: new Date().getTime(),
