@@ -2,7 +2,7 @@ var randomstring = require('randomstring');
 var petInfo = require('../datas/pet-info').petInfo;
 
 /* global const */
-const speedUpRate = 360.0;
+const speedUpRate = 800.0;
 const oneDaySecond = 60 * 60 * 24;
 const happinessBonusValueScale = 10.0;
 const interactionThreshold = 5;
